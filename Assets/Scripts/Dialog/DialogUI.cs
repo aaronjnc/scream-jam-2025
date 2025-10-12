@@ -17,10 +17,11 @@ public class DialogUI : MonoBehaviour
 
     private List<DialogObject> dialogOptions = new List<DialogObject>();
 
-    private int selectedIndex = 0;
+    private List<TMP_Text> playerOptions = new List<TMP_Text>();
     
     public void LoadDialog(List<DialogObject> dialogObjects)
     {
+        ClearText();
         if (dialogObjects[0].isPlayerOption())
         {
             PrintPlayerOptions(dialogObjects);
@@ -33,22 +34,21 @@ public class DialogUI : MonoBehaviour
 
     private void PrintPlayerOptions(List<DialogObject> dialogObjects)
     {
+        playerOptions.Clear();
         dialogOptions.Clear();
         dialogOptions.AddRange(dialogObjects);
         GameObject horizontalObjPrefab = Instantiate(playerChoicePrefab, textObjParent);
-        List<GameObject> newTextObjects = new List<GameObject>();
         foreach (DialogObject dialogObject in dialogObjects)
         {
-            GameObject newTextObj = Instantiate(textObjPrefab, horizontalObjPrefab.transform);
-            TMP_Text textComp = newTextObj.GetComponent<TMP_Text>();
+            TMP_Text textComp = Instantiate(textObjPrefab, horizontalObjPrefab.transform).GetComponent<TMP_Text>();
             textComp.text = dialogObject.GetText();
-            newTextObjects.Add(newTextObj);
+            playerOptions.Add(textComp);
         }
-        selectedIndex = 0;
     }
 
     private void PrintBookLines(List<DialogObject> bookLines)
     {
+        playerOptions.Clear();
         foreach (DialogObject bookLine in bookLines)
         {
             GameObject newTextObj = Instantiate(textObjPrefab, textObjParent);
@@ -56,5 +56,32 @@ public class DialogUI : MonoBehaviour
             textComp.text = bookLine.GetText();
         }
         selectedDialog = bookLines[bookLines.Count - 1];
+    }
+
+    private void ClearText()
+    {
+        Transform[] children = textObjParent.GetComponentsInChildren<Transform>();
+
+        for (int i = 0; i < children.Length; i++)
+        {
+            Destroy(children[i].gameObject);
+            i--;
+        }
+    }
+
+    public void UpdateChoice(int oldChoice, int newChoice)
+    {
+        playerOptions[oldChoice].color = Color.white;
+        playerOptions[newChoice].color = Color.red;
+    }
+
+    public DialogObject GetDialogChoice(int choice)
+    {
+        return dialogOptions[choice];
+    }
+
+    public int GetOptionCount()
+    {
+        return dialogOptions.Count;
     }
 }

@@ -22,4 +22,9 @@ public class Page : ScriptableObject
     {
         return startingKey;
     }
+
+    public string GetPageName()
+    {
+        return pageName;
+    }
 }

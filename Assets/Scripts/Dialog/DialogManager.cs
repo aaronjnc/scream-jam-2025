@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.InputSystem.InputAction;
 
 public class DialogManager : MonoBehaviour
 {
@@ -11,13 +12,16 @@ public class DialogManager : MonoBehaviour
 
     private Dictionary<string, List<DialogObject>> pageDialog = new Dictionary<string, List<DialogObject>>();
 
-    private void Awake()
+    private int selectedIndex = 0;
+
+    private void Start()
     {
-        
+        LoadPage();
     }
 
     private void LoadPage()
     {
+        selectedIndex = 0;
         Page currentPage = pageManager.GetCurrentPage();
         List<DialogObject> dialogObjects = currentPage.GetDialogList();
         foreach (DialogObject dialog in dialogObjects)
@@ -29,5 +33,17 @@ public class DialogManager : MonoBehaviour
             pageDialog[dialog.GetDialogKey()].Add(dialog);
         }
         dialogUI.LoadDialog(pageDialog[currentPage.GetFirstKey()]);
+    }
+
+    public void SwitchChoice(CallbackContext ctx)
+    {
+        int dir = (int)ctx.ReadValue<float>();
+        int oldChoice = selectedIndex;
+        selectedIndex = Mathf.Clamp(selectedIndex + dir, 0, dialogUI.GetOptionCount());
+    }
+
+    public void NextDialog(CallbackContext ctx)
+    {
+
     }
 }
