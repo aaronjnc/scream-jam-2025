@@ -15,13 +15,20 @@ public class DialogUI : MonoBehaviour
 
     private DialogObject selectedDialog;
 
+    private List<GameObject> textObjects = new List<GameObject>();
+
     private List<DialogObject> dialogOptions = new List<DialogObject>();
 
     private List<TMP_Text> playerOptions = new List<TMP_Text>();
+
+    public void LoadPage(List<DialogObject> dialogObjects)
+    {
+        ClearText();
+        LoadDialog(dialogObjects);
+    }
     
     public void LoadDialog(List<DialogObject> dialogObjects)
     {
-        ClearText();
         if (dialogObjects[0].isPlayerOption())
         {
             PrintPlayerOptions(dialogObjects);
@@ -43,28 +50,35 @@ public class DialogUI : MonoBehaviour
             TMP_Text textComp = Instantiate(textObjPrefab, horizontalObjPrefab.transform).GetComponent<TMP_Text>();
             textComp.text = dialogObject.GetText();
             playerOptions.Add(textComp);
+            textObjects.Add(textComp.gameObject);
+        }
+        textObjects.Add(horizontalObjPrefab);
+        if (playerOptions.Count > 1)
+        {
+            playerOptions[0].color = Color.red;
         }
     }
 
     private void PrintBookLines(List<DialogObject> bookLines)
     {
         playerOptions.Clear();
+        dialogOptions.Clear();
         foreach (DialogObject bookLine in bookLines)
         {
             GameObject newTextObj = Instantiate(textObjPrefab, textObjParent);
             TMP_Text textComp = newTextObj.GetComponent<TMP_Text>();
             textComp.text = bookLine.GetText();
+            textObjects.Add(newTextObj);
         }
         selectedDialog = bookLines[bookLines.Count - 1];
     }
 
     private void ClearText()
     {
-        Transform[] children = textObjParent.GetComponentsInChildren<Transform>();
-
-        for (int i = 0; i < children.Length; i++)
+        for (int i = 0; i < textObjects.Count; i++)
         {
-            Destroy(children[i].gameObject);
+            Destroy(textObjects[i]);
+            textObjects.RemoveAt(i);
             i--;
         }
     }
@@ -77,6 +91,10 @@ public class DialogUI : MonoBehaviour
 
     public DialogObject GetDialogChoice(int choice)
     {
+        if (dialogOptions.Count == 0)
+        {
+            return selectedDialog;
+        }
         return dialogOptions[choice];
     }
 

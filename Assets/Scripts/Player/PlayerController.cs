@@ -4,8 +4,12 @@ public class PlayerController : MonoBehaviour
 {
     PlayerInput inputActions;
 
-    private void Awake()
+    private void Start()
     {
+        DialogManager dialogManager = FindFirstObjectByType<DialogManager>();
         inputActions = new PlayerInput();
+        inputActions.PageControls.Next.performed += dialogManager.NextDialog;
+        inputActions.PageControls.Change.performed += dialogManager.SwitchChoice;
+        inputActions.PageControls.Enable();
     }
 }

@@ -23,6 +23,16 @@ public class DialogObject : ScriptableObject
         return dialogKey;
     }
 
+    public string GetNextKey()
+    {
+        return nextKey;
+    }
+
+    public string GetNextPage()
+    {
+        return nextPage;
+    }
+
     public bool isPlayerOption()
     {
         return bPlayerOption;

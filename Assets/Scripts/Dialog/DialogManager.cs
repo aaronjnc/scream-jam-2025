@@ -32,18 +32,32 @@ public class DialogManager : MonoBehaviour
             }
             pageDialog[dialog.GetDialogKey()].Add(dialog);
         }
-        dialogUI.LoadDialog(pageDialog[currentPage.GetFirstKey()]);
+        dialogUI.LoadPage(pageDialog[currentPage.GetFirstKey()]);
     }
 
     public void SwitchChoice(CallbackContext ctx)
     {
+        if (dialogUI.GetOptionCount() == 0)
+        {
+            return;
+        }
         int dir = (int)ctx.ReadValue<float>();
         int oldChoice = selectedIndex;
         selectedIndex = Mathf.Clamp(selectedIndex + dir, 0, dialogUI.GetOptionCount());
+        dialogUI.UpdateChoice(oldChoice, selectedIndex);
     }
 
     public void NextDialog(CallbackContext ctx)
     {
-
+        DialogObject dialogChoice = dialogUI.GetDialogChoice(selectedIndex);
+        string nextPage = dialogChoice.GetNextPage();
+        if (nextPage != "")
+        {
+            pageManager.NextPage(nextPage);
+            LoadPage();
+            return;
+        }
+        string nextDialog = dialogChoice.GetNextKey();
+        dialogUI.LoadDialog(pageDialog[nextDialog]);
     }
 }
