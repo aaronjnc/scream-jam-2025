@@ -3,23 +3,15 @@ using UnityEngine;
 
 public class PageManager : MonoBehaviour
 {
-    [SerializeField]
-    private List<Page> pages = new List<Page>();
 
     [SerializeField]
     private Page currentPage;
 
     [SerializeField]
-    private string startPage;
-
-    private Dictionary<string, Page> pageDictionary = new Dictionary<string, Page>();
+    private Page startPage;
 
     private void Awake()
     {
-        foreach (Page page in pages)
-        {
-            pageDictionary.Add(page.GetPageName(), page);
-        }
         NextPage(startPage);
     }
 
@@ -28,8 +20,8 @@ public class PageManager : MonoBehaviour
         return currentPage;
     }
 
-    public void NextPage(string nextPage)
+    public void NextPage(Page nextPage)
     {
-        currentPage = pageDictionary[nextPage];
+        currentPage = nextPage;
     }
 }

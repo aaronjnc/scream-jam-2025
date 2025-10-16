@@ -1,34 +1,46 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "DialogObject", menuName = "Scriptable Objects/DialogObject")]
 public class DialogObject : ScriptableObject
 {
-    [SerializeField]
-    private string dialogKey;
+    public enum ESoundTiming
+    {
+        Before = 0,
+        During = 1,
+        After = 2,
+    }
 
     [SerializeField]
     private bool bPlayerOption;
 
     [SerializeField]
+    private AudioClip textAudio;
+
+    [SerializeField]
+    private ESoundTiming soundTiming;
+
+    [SerializeField]
     private string text;
 
     [SerializeField]
-    private string nextKey;
+    private string impairedText;
 
     [SerializeField]
-    private string nextPage;
+    private List<DialogObject> nextDialogs = new List<DialogObject>();
 
-    public string GetDialogKey()
+    [SerializeField]
+    private Page nextPage;
+
+    [SerializeField]
+    private bool bImpairs;
+
+    public List<DialogObject> GetNextObjects()
     {
-        return dialogKey;
+        return nextDialogs;
     }
 
-    public string GetNextKey()
-    {
-        return nextKey;
-    }
-
-    public string GetNextPage()
+    public Page GetNextPage()
     {
         return nextPage;
     }
@@ -38,8 +50,23 @@ public class DialogObject : ScriptableObject
         return bPlayerOption;
     }
 
-    public string GetText()
+    public string GetText(bool isImpaired)
     {
-        return text;
+        return isImpaired ? impairedText : text;
+    }
+
+    public bool DoesImpair()
+    {
+        return bImpairs;
+    }
+
+    public AudioClip GetAudioClip()
+    {
+        return textAudio;
+    }
+
+    public ESoundTiming GetSoundTiming()
+    {
+        return soundTiming;
     }
 }

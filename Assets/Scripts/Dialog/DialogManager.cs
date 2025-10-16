@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using static UnityEngine.InputSystem.InputAction;
 
 public class DialogManager : MonoBehaviour
@@ -10,29 +11,48 @@ public class DialogManager : MonoBehaviour
     [SerializeField]
     private DialogUI dialogUI;
 
-    private Dictionary<string, List<DialogObject>> pageDialog = new Dictionary<string, List<DialogObject>>();
+    [SerializeField]
+    private GameObject dialogPanel;
+
+    [SerializeField]
+    private GameObject startPanel;
+
+    [SerializeField]
+    private PlayerController playerController;
+
+    private Image dialogImage;
 
     private int selectedIndex = 0;
 
+    private bool bImpaired = false;
+
     private void Start()
     {
+        dialogImage = dialogPanel.GetComponent<Image>();
+        dialogPanel.SetActive(false);
+    }
+
+    public void StartGame()
+    {
+        startPanel.SetActive(false);
+        dialogPanel.SetActive(true);
         LoadPage();
+        playerController.StartGame();
     }
 
     private void LoadPage()
     {
         selectedIndex = 0;
         Page currentPage = pageManager.GetCurrentPage();
-        List<DialogObject> dialogObjects = currentPage.GetDialogList();
-        foreach (DialogObject dialog in dialogObjects)
+        if (currentPage.GetPageImage() != null)
         {
-            if (!pageDialog.ContainsKey(dialog.GetDialogKey()))
-            {
-                pageDialog.Add(dialog.GetDialogKey(), new List<DialogObject>());
-            }
-            pageDialog[dialog.GetDialogKey()].Add(dialog);
+            dialogImage.sprite = currentPage.GetPageImage();
         }
-        dialogUI.LoadPage(pageDialog[currentPage.GetFirstKey()]);
+        else
+        {
+            dialogImage.sprite = null;
+        }
+        dialogUI.LoadPage(currentPage.GetStartDialog(), bImpaired);
     }
 
     public void SwitchChoice(CallbackContext ctx)
@@ -50,14 +70,15 @@ public class DialogManager : MonoBehaviour
     public void NextDialog(CallbackContext ctx)
     {
         DialogObject dialogChoice = dialogUI.GetDialogChoice(selectedIndex);
-        string nextPage = dialogChoice.GetNextPage();
-        if (nextPage != "")
+        bImpaired = dialogChoice.DoesImpair();
+        Page nextPage = dialogChoice.GetNextPage();
+        if (nextPage != null)
         {
             pageManager.NextPage(nextPage);
             LoadPage();
             return;
         }
-        string nextDialog = dialogChoice.GetNextKey();
-        dialogUI.LoadDialog(pageDialog[nextDialog]);
+        dialogUI.LoadDialog(dialogChoice.GetNextObjects(), bImpaired);
+        selectedIndex = 0;
     }
 }

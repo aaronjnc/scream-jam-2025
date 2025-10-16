@@ -4,27 +4,20 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Page", menuName = "Scriptable Objects/Page")]
 public class Page : ScriptableObject
 {
-    [SerializeField]
-    private string pageName;
 
     [SerializeField]
-    private string startingKey;
+    private List<DialogObject> startDialog = new List<DialogObject>();
 
     [SerializeField]
-    private List<DialogObject> dialogList = new List<DialogObject>();
+    private Sprite pageImage;
 
-    public List<DialogObject> GetDialogList()
+    public List<DialogObject> GetStartDialog()
     {
-        return dialogList;
+        return startDialog;
     }
 
-    public string GetFirstKey()
+    public Sprite GetPageImage()
     {
-        return startingKey;
-    }
-
-    public string GetPageName()
-    {
-        return pageName;
+        return pageImage;
     }
 }

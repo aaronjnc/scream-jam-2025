@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcd3583e36cf4d7468ec632a2b0cb1ae, type: 3}
+  m_Name: DialogObject 2
+  m_EditorClassIdentifier: 
+  bPlayerOption: 0
+  text: Bloody Mary draws closer, her presence freezing the air around you.
+  impairedText: Bloody Mary  raw  cl s r, h r p  sence freez    t e air aro  d you.
+  nextDialogs:
+  - {fileID: 11400000, guid: 0a6db35c76d5ce047b78d9b5b6f89e2e, type: 2}
+  nextPage: {fileID: 0}
+  bImpairs: 0

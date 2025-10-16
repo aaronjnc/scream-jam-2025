@@ -10,6 +10,10 @@ public class PlayerController : MonoBehaviour
         inputActions = new PlayerInput();
         inputActions.PageControls.Next.performed += dialogManager.NextDialog;
         inputActions.PageControls.Change.performed += dialogManager.SwitchChoice;
+    }
+
+    public void StartGame()
+    {
         inputActions.PageControls.Enable();
     }
 }
