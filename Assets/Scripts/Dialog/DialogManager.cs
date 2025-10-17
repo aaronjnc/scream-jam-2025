@@ -47,10 +47,12 @@ public class DialogManager : MonoBehaviour
         if (currentPage.GetPageImage() != null)
         {
             dialogImage.sprite = currentPage.GetPageImage();
+            dialogImage.color = Color.white;
         }
         else
         {
             dialogImage.sprite = null;
+            dialogImage.color = Color.black;
         }
         dialogUI.LoadPage(currentPage.GetStartDialog(), bImpaired);
     }

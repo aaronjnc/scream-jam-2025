@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startDialog:
   - {fileID: 11400000, guid: 2ccfce4519c69eb42be09d2619c23bf6, type: 2}
-  pageImage: {fileID: 0}
+  pageImage: {fileID: -5043528495432702037, guid: 5e6e4c2ea95cc324585dd1b448882a71, type: 3}
