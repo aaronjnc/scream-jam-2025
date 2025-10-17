@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcd3583e36cf4d7468ec632a2b0cb1ae, type: 3}
   m_Name: Dialog 8
   m_EditorClassIdentifier: 
-  bPlayerOption: 0
+  bPlayerOption: 1
   textAudio: {fileID: 0}
   soundTiming: 0
   text: '>Light the candle. (Go to 4.3)'
