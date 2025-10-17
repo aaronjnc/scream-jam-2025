@@ -2,14 +2,12 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 
-[RequireComponent(typeof(AudioSource))]
 public class DialogObjectUI : MonoBehaviour
 {
     private DialogObject dialogObject;
     
     private DialogUI dialogUI;
 
-    private AudioSource audioSource;
     private TMP_Text textObj;
 
     private bool bIsImpaired = false;
@@ -18,8 +16,8 @@ public class DialogObjectUI : MonoBehaviour
 
     private void Awake()
     {
-        audioSource = GetComponent<AudioSource>();
         textObj = GetComponent<TMP_Text>();
+        textObj.enabled = false;
     }
 
     public void Skip()
@@ -28,10 +26,6 @@ public class DialogObjectUI : MonoBehaviour
         {
             StopCoroutine(runningCoroutine);
             runningCoroutine = null;
-        }
-        if (audioSource.isPlaying)
-        {
-            audioSource.Stop();
         }
         DisplayText();
     }
@@ -54,25 +48,25 @@ public class DialogObjectUI : MonoBehaviour
     public void DisplayText()
     {
         textObj.text = dialogObject.GetText(bIsImpaired);
+        textObj.enabled = true;
     }
 
     public void PlayAudio()
     {
         AudioClip clip = dialogObject.GetAudioClip();
-        audioSource.clip = clip;
         switch (dialogObject.GetSoundTiming())
         {
             case DialogObject.ESoundTiming.Before:
-                audioSource.Play();
+                dialogUI.PlayAudioClip(clip);
                 runningCoroutine = StartCoroutine(WaitForAudio(clip.length));
                 break;
             case DialogObject.ESoundTiming.During:
-                audioSource.Play();
+                dialogUI.PlayAudioClip(clip);
                 DisplayText();
                 break;
             case DialogObject.ESoundTiming.After:
                 DisplayText();
-                audioSource.Play();
+                dialogUI.PlayAudioClip(clip);
                 break;
         }
     }

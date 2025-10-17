@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Dialog
   m_EditorClassIdentifier: 
   bPlayerOption: 0
-  textAudio: {fileID: 8300000, guid: 32d465e5608b24443904802e2ac3ab9e, type: 3}
+  textAudio: {fileID: 0}
   soundTiming: 1
   text: Your body collides with a cold stone floor.
   impairedText: 

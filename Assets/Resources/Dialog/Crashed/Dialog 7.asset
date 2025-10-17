@@ -12,12 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcd3583e36cf4d7468ec632a2b0cb1ae, type: 3}
   m_Name: Dialog 7
   m_EditorClassIdentifier: 
-  bPlayerOption: 1
+  bPlayerOption: 0
   textAudio: {fileID: 0}
   soundTiming: 0
-  text: '>Curse Bloody Mary.'
-  impairedText: 
+  text: You turn to where her voice comes from and find another pristine mirror.
+  impairedText: You t rn to wh re her voi  e comes fro  and find another pr st ne
+    mirror.
   nextDialogs:
-  - {fileID: 11400000, guid: 715b96d4fc9824f4a90f1f1b6b230db3, type: 2}
+  - {fileID: 11400000, guid: dd842a811e4e84649a4afb58575af8ce, type: 2}
+  - {fileID: 11400000, guid: e42aecfda1472c64fb9d1e67c49ad6d0, type: 2}
   nextPage: {fileID: 0}
   bImpairs: 0

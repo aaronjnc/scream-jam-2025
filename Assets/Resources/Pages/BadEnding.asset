@@ -12,6 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b56cef50673b4814cad0325ea50f3e72, type: 3}
   m_Name: BadEnding
   m_EditorClassIdentifier: 
-  pageName: 
-  startingKey: 
-  dialogList: []
+  startDialog: []
+  pageImage: {fileID: 8189081374743804129, guid: 56e50cb7f7b97a14aafcde94983d2fe8, type: 3}

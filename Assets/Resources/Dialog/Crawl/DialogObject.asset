@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: DialogObject
   m_EditorClassIdentifier: 
   bPlayerOption: 0
+  textAudio: {fileID: 8300000, guid: c0c1ef505559bb14ca8d4ebf35e1d8d8, type: 3}
+  soundTiming: 0
   text: Even as you bleed out, you keep dragging yourself across the floor, leaving
     trails of red in your wake.
   impairedText: Ev n as y u bleed o  , y   k ep dra g ng y  rs lf across th  floor,

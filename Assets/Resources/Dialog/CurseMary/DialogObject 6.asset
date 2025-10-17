@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcd3583e36cf4d7468ec632a2b0cb1ae, type: 3}
+  m_Name: DialogObject 6
+  m_EditorClassIdentifier: 
+  bPlayerOption: 0
+  textAudio: {fileID: 0}
+  soundTiming: 0
+  text: Your legs fail you. You cannot even raise your torso.
+  impairedText: Your le s fa l you. You ca not ev n r  se  our tors .
+  nextDialogs:
+  - {fileID: 11400000, guid: f38265a301e07384194c4d9152cd1d8b, type: 2}
+  nextPage: {fileID: 0}
+  bImpairs: 0

@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: Dialog 8
   m_EditorClassIdentifier: 
   bPlayerOption: 1
+  textAudio: {fileID: 0}
+  soundTiming: 0
   text: '>Run away.'
   impairedText: 
-  nextDialogs:
-  - {fileID: 11400000, guid: 2f5ee1cc5b7925f48acdbe8fdd5751a4, type: 2}
-  nextPage: {fileID: 0}
+  nextDialogs: []
+  nextPage: {fileID: 11400000, guid: 5194a7e0bff3c52439e2f2b15571d8d8, type: 2}
   bImpairs: 0

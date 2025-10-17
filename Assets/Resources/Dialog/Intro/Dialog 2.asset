@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcd3583e36cf4d7468ec632a2b0cb1ae, type: 3}
+  m_Name: Dialog 2
+  m_EditorClassIdentifier: 
+  bPlayerOption: 0
+  textAudio: {fileID: 8300000, guid: 57d0281767ee1da46825882adb857040, type: 3}
+  soundTiming: 1
+  text: The book you used for the ritual glows, its pages flipping back-and-forth.
+  impairedText: 
+  nextDialogs:
+  - {fileID: 11400000, guid: c5d6780765dcd0c4884c4afb60d6bbf5, type: 2}
+  nextPage: {fileID: 0}
+  bImpairs: 0

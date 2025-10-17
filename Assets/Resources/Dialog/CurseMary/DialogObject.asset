@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: DialogObject
   m_EditorClassIdentifier: 
   bPlayerOption: 0
-  textAudio: {fileID: 0}
+  textAudio: {fileID: 8300000, guid: c0c1ef505559bb14ca8d4ebf35e1d8d8, type: 3}
   soundTiming: 0
   text: "\u201CYou wretched spirit! Return to the mirror from whence you came!\u201D"
-  impairedText: 
+  impairedText: "\u201CYou wr tch d sp rit! Retur to t  m rror f om wh n e y u c
+    me!\u201D"
   nextDialogs:
   - {fileID: 11400000, guid: 9d49699209d45b34e86907b00290f59c, type: 2}
   nextPage: {fileID: 0}

@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: Dialog 1
   m_EditorClassIdentifier: 
   bPlayerOption: 0
+  textAudio: {fileID: 8300000, guid: 32d465e5608b24443904802e2ac3ab9e, type: 3}
+  soundTiming: 1
   text: The sound of pages turning echoes distantly and gradually fades away.
   impairedText: 
   nextDialogs:

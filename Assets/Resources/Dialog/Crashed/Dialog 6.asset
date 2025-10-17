@@ -13,10 +13,13 @@ MonoBehaviour:
   m_Name: Dialog 6
   m_EditorClassIdentifier: 
   bPlayerOption: 0
-  text: You turn to where her voice comes from and find another pristine mirror.
-  impairedText: 
+  textAudio: {fileID: 0}
+  soundTiming: 0
+  text: A ghostly voice mocks you with a clarity that pierces through your muddled
+    senses.
+  impairedText: A gh   ly voice mocks you  ith a clarity that pi rces thr ugh your
+    m  dled sens s.
   nextDialogs:
   - {fileID: 11400000, guid: fdfa0ced163c9e5478c43f00f5b929c0, type: 2}
-  - {fileID: 11400000, guid: dd842a811e4e84649a4afb58575af8ce, type: 2}
   nextPage: {fileID: 0}
   bImpairs: 0

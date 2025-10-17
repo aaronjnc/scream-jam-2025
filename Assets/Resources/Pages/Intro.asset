@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b56cef50673b4814cad0325ea50f3e72, type: 3}
   m_Name: Intro
   m_EditorClassIdentifier: 
-  pageName: Intro
-  startingKey: 
-  dialogList: []
+  startDialog:
+  - {fileID: 11400000, guid: a2da6265770c0fa4da1aefc959c0c72d, type: 2}
+  pageImage: {fileID: 0}

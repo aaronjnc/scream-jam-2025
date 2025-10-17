@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Chanting
   m_EditorClassIdentifier: 
   startDialog:
-  - {fileID: 11400000, guid: d4ed849f005917b459fb90e20d4e2b85, type: 2}
-  pageImage: {fileID: 8189081374743804129, guid: 56e50cb7f7b97a14aafcde94983d2fe8, type: 3}
+  - {fileID: 11400000, guid: 32482ce16ada64c46a10b58a76e300fe, type: 2}
+  pageImage: {fileID: 0}

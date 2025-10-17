@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcd3583e36cf4d7468ec632a2b0cb1ae, type: 3}
+  m_Name: Dialog 2
+  m_EditorClassIdentifier: 
+  bPlayerOption: 0
+  textAudio: {fileID: 8300000, guid: bc2f633eb288f684f9e68815f858a829, type: 3}
+  soundTiming: 1
+  text: It cracks into a jagged web, but Bloody Mary remains.
+  impairedText: " t cra ks int  a jagged web, b   Bloody Mary\u2019s i age rem  ns."
+  nextDialogs:
+  - {fileID: 11400000, guid: a20814110a414d04bbf1a8919f097917, type: 2}
+  nextPage: {fileID: 0}
+  bImpairs: 0

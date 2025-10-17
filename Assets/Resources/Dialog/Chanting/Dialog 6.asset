@@ -12,8 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcd3583e36cf4d7468ec632a2b0cb1ae, type: 3}
   m_Name: Dialog 6
   m_EditorClassIdentifier: 
-  dialogKey: Options2
-  bPlayerOption: 1
-  text: '>Break a mirror.'
-  nextKey: 
-  nextPage: Good
+  bPlayerOption: 0
+  textAudio: {fileID: 8300000, guid: c0c1ef505559bb14ca8d4ebf35e1d8d8, type: 3}
+  soundTiming: 0
+  text: "\u201CBloody Mary.\u201D"
+  impairedText: 
+  nextDialogs:
+  - {fileID: 11400000, guid: c5d239da1b86865448a03a832db2a22a, type: 2}
+  nextPage: {fileID: 0}
+  bImpairs: 0

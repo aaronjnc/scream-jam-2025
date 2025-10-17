@@ -13,10 +13,12 @@ MonoBehaviour:
   m_Name: Dialog 4
   m_EditorClassIdentifier: 
   bPlayerOption: 0
-  text: "\u201CI\u2019ll be amused if you reach the end and escape. I dare you to
-    try.\u201D"
+  textAudio: {fileID: 0}
+  soundTiming: 0
+  text: Unfortunately, your injuries have affected your vision, leaving your sight
+    obstructed by flashes of red.
   impairedText: 
   nextDialogs:
   - {fileID: 11400000, guid: 9e62d144adea7684aa03dbebb00ad2c9, type: 2}
   nextPage: {fileID: 0}
-  bImpairs: 0
+  bImpairs: 1

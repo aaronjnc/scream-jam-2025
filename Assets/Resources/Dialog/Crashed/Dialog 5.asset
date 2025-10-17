@@ -13,9 +13,12 @@ MonoBehaviour:
   m_Name: Dialog 5
   m_EditorClassIdentifier: 
   bPlayerOption: 0
-  text: A ghostly voice mocks you with a clarity that pierces through your muddled
-    senses.
-  impairedText: 
+  textAudio: {fileID: 0}
+  soundTiming: 0
+  text: "\u201CI\u2019ll be amused if you reach the end and escape. I dare you to
+    try.\u201D"
+  impairedText: "\u201CI\u2019ll be amused if you reach the end and escape. I dare
+    you to try.\u201D"
   nextDialogs:
   - {fileID: 11400000, guid: 49bfd7aeaee7ab142ac3266796c15ea5, type: 2}
   nextPage: {fileID: 0}

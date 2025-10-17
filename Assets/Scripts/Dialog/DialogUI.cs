@@ -15,6 +15,8 @@ public class DialogUI : MonoBehaviour
 
     private DialogObject selectedDialog;
 
+    private AudioSource audioSource;
+
     private List<GameObject> textGameObjects = new List<GameObject>();
 
     private List<DialogObject> dialogOptions = new List<DialogObject>();
@@ -24,6 +26,11 @@ public class DialogUI : MonoBehaviour
     private List<DialogObjectUI> dialogUI = new List<DialogObjectUI>();
 
     private bool bIsImpaired = false;
+
+    private void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     public void LoadPage(List<DialogObject> dialogObjects, bool updateImpaired)
     {
@@ -127,5 +134,15 @@ public class DialogUI : MonoBehaviour
     public int GetOptionCount()
     {
         return dialogOptions.Count;
+    }
+
+    public void PlayAudioClip(AudioClip clip)
+    {
+        if (audioSource.isPlaying)
+        {
+            audioSource.Stop();
+        }
+        audioSource.clip = clip;
+        audioSource.Play();
     }
 }

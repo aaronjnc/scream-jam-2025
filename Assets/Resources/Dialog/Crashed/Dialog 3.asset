@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: Dialog 3
   m_EditorClassIdentifier: 
   bPlayerOption: 0
-  text: Unfortunately, your injuries have affected your vision.
+  textAudio: {fileID: 0}
+  soundTiming: 0
+  text: You appear to be in the foyer of a dreary mansion.
   impairedText: 
   nextDialogs:
   - {fileID: 11400000, guid: c54456c00a184264db72c24169c8d4bc, type: 2}

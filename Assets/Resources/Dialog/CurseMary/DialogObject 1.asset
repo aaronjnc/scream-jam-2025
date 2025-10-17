@@ -13,8 +13,11 @@ MonoBehaviour:
   m_Name: DialogObject 1
   m_EditorClassIdentifier: 
   bPlayerOption: 0
-  text: "The spirit only laughs. \u201CYou believe you have control over me?\u201D"
-  impairedText: 
-  nextDialogs: []
+  textAudio: {fileID: 0}
+  soundTiming: 0
+  text: 'The spirit only howls with laughter, paralyzing you with utter fear. '
+  impairedText: 'The spirit  n y howls with lau ht r, par lyzi g you w th u t r fear. '
+  nextDialogs:
+  - {fileID: 11400000, guid: 114916d2bcdeeec4fb88e31adb6ca231, type: 2}
   nextPage: {fileID: 0}
   bImpairs: 0

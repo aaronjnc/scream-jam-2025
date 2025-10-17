@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: Dialog 7
   m_EditorClassIdentifier: 
   bPlayerOption: 1
+  textAudio: {fileID: 8300000, guid: c0c1ef505559bb14ca8d4ebf35e1d8d8, type: 3}
+  soundTiming: 0
   text: ">Chant \u201CBloody Mary.\u201D"
   impairedText: 
-  nextDialogs:
-  - {fileID: 11400000, guid: 32482ce16ada64c46a10b58a76e300fe, type: 2}
-  nextPage: {fileID: 0}
+  nextDialogs: []
+  nextPage: {fileID: 11400000, guid: 5b00420b9d5b719468eac341e560fbe5, type: 2}
   bImpairs: 0
