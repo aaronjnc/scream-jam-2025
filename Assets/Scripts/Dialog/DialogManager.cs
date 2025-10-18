@@ -20,11 +20,20 @@ public class DialogManager : MonoBehaviour
     [SerializeField]
     private PlayerController playerController;
 
+    [SerializeField]
+    private AudioSource gameMusicSource;
+
     private Image dialogImage;
 
     private int selectedIndex = 0;
 
     private bool bImpaired = false;
+
+    [SerializeField]
+    private AudioClip gameMusic;
+
+    [SerializeField]
+    private AudioClip badMusic;
 
     private void Start()
     {
@@ -44,6 +53,20 @@ public class DialogManager : MonoBehaviour
     {
         selectedIndex = 0;
         Page currentPage = pageManager.GetCurrentPage();
+        if (currentPage.name.Equals("EnterTheBook"))
+        {
+            gameMusicSource.clip = gameMusic;
+            gameMusicSource.Play();
+        }
+        else if (currentPage.name.Equals("BadEnding"))
+        {
+            gameMusicSource.clip = badMusic;
+            gameMusicSource.Play();
+        }
+        else if (currentPage.name.Equals("GoodEnding"))
+        {
+            gameMusicSource.Stop();
+        }
         if (currentPage.GetPageImage() != null)
         {
             dialogImage.sprite = currentPage.GetPageImage();
@@ -73,6 +96,10 @@ public class DialogManager : MonoBehaviour
     {
         DialogObject dialogChoice = dialogUI.GetDialogChoice(selectedIndex);
         bImpaired = dialogChoice.DoesImpair();
+        if (dialogChoice.DoesHeal() && bImpaired)
+        {
+            bImpaired = false;
+        }
         Page nextPage = dialogChoice.GetNextPage();
         if (nextPage != null)
         {

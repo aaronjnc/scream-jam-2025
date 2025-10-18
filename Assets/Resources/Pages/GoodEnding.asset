@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: GoodEnding
   m_EditorClassIdentifier: 
   startDialog:
-  - {fileID: 11400000, guid: eaa95f8d113389a44bcb980ff39aeb54, type: 2}
+  - {fileID: 11400000, guid: 7d63e1004b903a14a80870f2a83ae630, type: 2}
   pageImage: {fileID: 6313445092325230619, guid: 10a81936769296549b0ffe5219f38653, type: 3}

@@ -15,8 +15,10 @@ MonoBehaviour:
   bPlayerOption: 1
   textAudio: {fileID: 0}
   soundTiming: 0
-  text: '>Light the candle. (Go to 4.3)'
+  volume: 1
+  text: '>Light the candle.'
   impairedText: '>Light t e cand  .'
   nextDialogs: []
   nextPage: {fileID: 11400000, guid: ae808d136cef9d54cb6bd4fa6eb07d3f, type: 2}
   bImpairs: 0
+  bHeals: 0

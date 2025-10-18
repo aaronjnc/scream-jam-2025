@@ -57,16 +57,16 @@ public class DialogObjectUI : MonoBehaviour
         switch (dialogObject.GetSoundTiming())
         {
             case DialogObject.ESoundTiming.Before:
-                dialogUI.PlayAudioClip(clip);
+                dialogUI.PlayAudioClip(clip, dialogObject.GetVolume());
                 runningCoroutine = StartCoroutine(WaitForAudio(clip.length));
                 break;
             case DialogObject.ESoundTiming.During:
-                dialogUI.PlayAudioClip(clip);
+                dialogUI.PlayAudioClip(clip, dialogObject.GetVolume());
                 DisplayText();
                 break;
             case DialogObject.ESoundTiming.After:
                 DisplayText();
-                dialogUI.PlayAudioClip(clip);
+                dialogUI.PlayAudioClip(clip, dialogObject.GetVolume());
                 break;
         }
     }

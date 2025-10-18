@@ -13,10 +13,12 @@ MonoBehaviour:
   m_Name: DialogObject 8
   m_EditorClassIdentifier: 
   bPlayerOption: 0
-  textAudio: {fileID: 8300000, guid: f16ef048e8c5f2b419cfffe40074c608, type: 3}
+  textAudio: {fileID: 0}
   soundTiming: 1
+  volume: 1
   text: You are free.
   impairedText: 
   nextDialogs: []
   nextPage: {fileID: 0}
   bImpairs: 0
+  bHeals: 0

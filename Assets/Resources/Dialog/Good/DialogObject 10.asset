@@ -10,14 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fcd3583e36cf4d7468ec632a2b0cb1ae, type: 3}
-  m_Name: Dialog
+  m_Name: DialogObject 10
   m_EditorClassIdentifier: 
   bPlayerOption: 0
   textAudio: {fileID: 0}
   soundTiming: 0
   volume: 1
-  text: 
-  impairedText: 
-  nextDialogs: []
+  text: The candle wax melts onto your hand, stopping the blood flowing from your
+    wound.
+  impairedText: Th  candle wax melts o to y ur   nd, sto p ng the blood fl wing f
+    om your w u d.
+  nextDialogs:
+  - {fileID: 11400000, guid: 5d21f32e88d274d45a47ca0d578719e6, type: 2}
   nextPage: {fileID: 0}
   bImpairs: 0
+  bHeals: 1

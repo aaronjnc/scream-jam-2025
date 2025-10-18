@@ -136,13 +136,18 @@ public class DialogUI : MonoBehaviour
         return dialogOptions.Count;
     }
 
-    public void PlayAudioClip(AudioClip clip)
+    public void PlayAudioClip(AudioClip clip, float volume)
     {
         if (audioSource.isPlaying)
         {
             audioSource.Stop();
         }
         audioSource.clip = clip;
+        audioSource.volume = volume;
+        if (clip.name.Contains("Blinding light"))
+        {
+            audioSource.loop = true;
+        }
         audioSource.Play();
     }
 }

@@ -15,9 +15,11 @@ MonoBehaviour:
   bPlayerOption: 0
   textAudio: {fileID: 8300000, guid: 37eaf3df438cae54e91802651d011019, type: 3}
   soundTiming: 0
+  volume: 0.6
   text: A shadow shows up in the mirror.
   impairedText: 
   nextDialogs:
   - {fileID: 11400000, guid: e7faab2485a26e84699885269803b2a3, type: 2}
   nextPage: {fileID: 0}
   bImpairs: 0
+  bHeals: 0

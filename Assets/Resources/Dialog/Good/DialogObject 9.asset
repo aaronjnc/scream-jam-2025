@@ -10,14 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fcd3583e36cf4d7468ec632a2b0cb1ae, type: 3}
-  m_Name: Dialog
+  m_Name: DialogObject 9
   m_EditorClassIdentifier: 
   bPlayerOption: 0
-  textAudio: {fileID: 0}
+  textAudio: {fileID: 8300000, guid: c0c1ef505559bb14ca8d4ebf35e1d8d8, type: 3}
   soundTiming: 0
   volume: 1
-  text: 
-  impairedText: 
-  nextDialogs: []
+  text: As Bloody Mary lunges out from the floor-length mirror, you light the candle
+    and grab the hand mirror.
+  impairedText: As Bloody Mary lu ges o t fr m t e f  or-len  h mirror,  ou lig t
+    t e c  dle and grab the ha   mi ro .
+  nextDialogs:
+  - {fileID: 11400000, guid: 3e689e14d83ac994881d7008efb97767, type: 2}
   nextPage: {fileID: 0}
   bImpairs: 0
+  bHeals: 0

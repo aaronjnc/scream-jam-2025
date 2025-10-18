@@ -21,6 +21,9 @@ public class DialogObject : ScriptableObject
     private ESoundTiming soundTiming;
 
     [SerializeField]
+    private float volume = 1.0f;
+
+    [SerializeField]
     private string text;
 
     [SerializeField]
@@ -34,6 +37,9 @@ public class DialogObject : ScriptableObject
 
     [SerializeField]
     private bool bImpairs;
+
+    [SerializeField]
+    private bool bHeals;
 
     public List<DialogObject> GetNextObjects()
     {
@@ -60,6 +66,11 @@ public class DialogObject : ScriptableObject
         return bImpairs;
     }
 
+    public bool DoesHeal()
+    {
+        return bHeals;
+    }
+
     public AudioClip GetAudioClip()
     {
         return textAudio;
@@ -68,5 +79,10 @@ public class DialogObject : ScriptableObject
     public ESoundTiming GetSoundTiming()
     {
         return soundTiming;
+    }
+
+    public float GetVolume()
+    {
+        return volume;
     }
 }

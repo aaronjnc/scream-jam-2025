@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: DialogObject
   m_EditorClassIdentifier: 
   bPlayerOption: 0
-  textAudio: {fileID: 8300000, guid: c0c1ef505559bb14ca8d4ebf35e1d8d8, type: 3}
-  soundTiming: 0
+  textAudio: {fileID: 8300000, guid: f16ef048e8c5f2b419cfffe40074c608, type: 3}
+  soundTiming: 2
+  volume: 1
   text: Bloody Mary sees her own reflection, pale and bloodied, illuminated by the
     candlelight.
   impairedText: 
@@ -22,3 +23,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 426c4a6fe814bce4590e41b985c07161, type: 2}
   nextPage: {fileID: 0}
   bImpairs: 0
+  bHeals: 0

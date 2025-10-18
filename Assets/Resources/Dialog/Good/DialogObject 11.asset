@@ -10,14 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fcd3583e36cf4d7468ec632a2b0cb1ae, type: 3}
-  m_Name: Dialog
+  m_Name: DialogObject 11
   m_EditorClassIdentifier: 
   bPlayerOption: 0
   textAudio: {fileID: 0}
   soundTiming: 0
   volume: 1
-  text: 
-  impairedText: 
-  nextDialogs: []
+  text: "You hold up the flame just under the mirror, which shines light in the room\u2026
+    and light against her."
+  impairedText: "You ho d up the fl me just un er the mirr r, w ich shines light
+    in t e r o \u2026 and light ag  nst h r."
+  nextDialogs:
+  - {fileID: 11400000, guid: eaa95f8d113389a44bcb980ff39aeb54, type: 2}
   nextPage: {fileID: 0}
   bImpairs: 0
+  bHeals: 0

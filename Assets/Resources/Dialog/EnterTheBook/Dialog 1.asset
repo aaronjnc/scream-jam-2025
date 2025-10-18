@@ -15,9 +15,11 @@ MonoBehaviour:
   bPlayerOption: 0
   textAudio: {fileID: 8300000, guid: 32d465e5608b24443904802e2ac3ab9e, type: 3}
   soundTiming: 1
+  volume: 0.5
   text: The sound of pages turning echoes distantly and gradually fades away.
   impairedText: 
   nextDialogs:
   - {fileID: 11400000, guid: 7754d45b496347945933004d09992be9, type: 2}
   nextPage: {fileID: 0}
   bImpairs: 0
+  bHeals: 0
